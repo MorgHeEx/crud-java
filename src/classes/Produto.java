@@ -141,4 +141,15 @@ public class Produto{
             System.out.print("Erro no Atualizar Produto: " + e.toString()); 
         }   
     }
+    public void excluir(){
+      String sql = "DELETE FROM produtos WHERE id =?";
+      try{
+      Connection con = DB.conexao();
+      PreparedStatement stmt = con.prepareStatement(sql);
+      stmt.setInt(1, this.getId());
+      stmt.executeUpdate();
+    }catch(SQLException e){        
+      System.out.print("Erro no excluir produto: " + e.toString()); 
+    }
+  }
 }

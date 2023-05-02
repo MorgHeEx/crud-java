@@ -89,4 +89,5 @@ public class Categoria {
     }catch(SQLException e){        
       System.out.print("Erro no excluir categoria: " + e.toString()); 
     }
+  }
 }
