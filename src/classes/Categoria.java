@@ -79,5 +79,14 @@ public class Categoria {
         }
    }
    
-
+    public void excluir(){
+      String sql = "DELETE FROM categorias WHERE id =?";
+      try{
+      Connection con = DB.conexao();
+      PreparedStatement stmt = con.prepareStatement(sql);
+      stmt.setInt(1, this.getId());
+      stmt.executeUpdate();
+    }catch(SQLException e){        
+      System.out.print("Erro no excluir categoria: " + e.toString()); 
+    }
 }

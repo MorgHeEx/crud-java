@@ -8,7 +8,7 @@ public class DB{
 	public static final String servidor = "127.0.0.1:3306";
 	public static final String usuario = "root";
 	public static final String senha = "";
-	public static final String nome_banco = "crud_java";
+	public static final String nome_banco = "crud";
 
 	public static Connection conexao(){
         Connection conexao = null; 

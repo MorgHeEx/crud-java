@@ -141,7 +141,4 @@ public class Produto{
             System.out.print("Erro no Atualizar Produto: " + e.toString()); 
         }   
     }
-    
- 
-    
 }
