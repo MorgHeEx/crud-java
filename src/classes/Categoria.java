@@ -79,6 +79,21 @@ public class Categoria {
         }
    }
    
+   public void atualizar (){
+    String sql = "UPDATE categoria SET categoria_id = ?, nome = ?, preco = ?, quantidade = ?  WHERE id = ? ";
+    try{
+        Connection con = DB.conexao();     
+        PreparedStatement stmt = con.prepareStatement(sql);
+
+        stmt.setString(2, this.getNome());   
+        stmt.setInt(5, this.getId());
+        stmt.executeUpdate();
+
+    }catch(SQLException e){      	
+        System.out.print("Erro no Atualizar Categoria: " + e.toString()); 
+    }   
+}
+   
     public void excluir(){
       String sql = "DELETE FROM categorias WHERE id =?";
       try{
